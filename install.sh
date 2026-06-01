@@ -1,28 +1,28 @@
 #!/bin/bash
-# install.sh - Dotfiles kurulum scripti
-# BoraAITA - Kişisel geliştirici ortam yapılandırması
+# install.sh - Dotfiles setup script
+# BoraAITA - Personal developer environment configuration
 
 set -e
 
-echo "🚀 Dotfiles kurulumu başlıyor..."
+echo "🚀 Starting dotfiles installation..."
 echo ""
 
 # Git config
-echo "📝 Git yapılandırması kuruluyor..."
+echo "📝 Setting up Git configuration..."
 cp .gitconfig ~/.gitconfig
-echo "✅ .gitconfig kuruldu"
+echo "✅ .gitconfig installed"
 
 # Bashrc
-echo "🐚 Bash yapılandırması kuruluyor..."
+echo "🐚 Setting up Bash configuration..."
 if [ -f ~/.bashrc ]; then
     cp ~/.bashrc ~/.bashrc.backup
-    echo "📋 Mevcut .bashrc yedeklendi"
+    echo "📋 Existing .bashrc backed up"
 fi
 cat .bashrc >> ~/.bashrc
-echo "✅ .bashrc güncellendi"
+echo "✅ .bashrc updated"
 
-# Gerekli araçları kur
-echo "📦 Gerekli araçlar kuruluyor..."
+# Install required tools
+echo "📦 Installing required tools..."
 if command -v apt-get &> /dev/null; then
     sudo apt-get update
     sudo apt-get install -y git curl wget build-essential
@@ -31,19 +31,19 @@ elif command -v brew &> /dev/null; then
 elif command -v pacman &> /dev/null; then
     sudo pacman -S --noconfirm git curl wget base-devel
 fi
-echo "✅ Araçlar kuruldu"
+echo "✅ Tools installed"
 
-# Git cleanup alias'ı
+# Git cleanup alias
 echo "
-# Merge edilmiş branch'leri temizle
+# Clean up merged branches
 git_cleanup_merged() {
     git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d
 }
 " >> ~/.bashrc
 
 echo ""
-echo "🎉 Kurulum tamamlandı!"
-echo "📝 Değişikliklerin etkili olması için终端'ı yeniden başlatın veya:"
+echo "🎉 Installation complete!"
+echo "📝 To apply changes, restart your terminal or run:"
 echo "   source ~/.bashrc"
 echo ""
-echo "Keyifli kodlamalar! 🚀"
+echo "Happy coding! 🚀"

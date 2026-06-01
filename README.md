@@ -1,17 +1,17 @@
 # ⚙️ Dotfiles
 
-Kişisel geliştirici ortam yapılandırmaları. Yeni makine kurulumunu hızlandırır.
+Personal developer environment configurations. Speeds up new machine setup.
 
-## 📦 İçerik
+## 📦 Contents
 
-| Dosya | Açıklama |
-|-------|----------|
-| `.gitconfig` | Git ayarları ve kısayollar |
-| `.bashrc` | Bash shell yapılandırması |
-| `.vimrc` | Vim editör ayarları |
-| `install.sh` | Otomatik kurulum scripti |
+| File | Description |
+|------|-------------|
+| `.gitconfig` | Git settings and aliases |
+| `.bashrc` | Bash shell configuration |
+| `.vimrc` | Vim editor settings |
+| `install.sh` | Automatic setup script |
 
-## 🚀 Hızlı Kurulum
+## 🚀 Quick Install
 
 ```bash
 git clone https://github.com/BoraAITA/dotfiles.git
@@ -19,17 +19,17 @@ cd dotfiles
 ./install.sh
 ```
 
-## 📝 Git Config Özellikleri
+## 📝 Git Config Features
 
-- Renkli output
-- Kısayollar (git s, git c, git l vb.)
-- Pull with rebase (varsayılan)
-- Sign commits with GPG (opsiyonel)
+- Colorful output
+- Aliases (git s, git c, git l, etc.)
+- Pull with rebase (default)
+- Sign commits with GPG (optional)
 
-## 🔧 Bashrc Özellikleri
+## 🔧 Bashrc Features
 
-- Renkli prompt
-- Alias'lar (ls, ll, gs, gp vb.)
-- Kolay cd (.., ..., ~)
+- Colorful prompt
+- Aliases (ls, ll, gs, gp, etc.)
+- Easy cd (.., ..., ~)
 - Auto-complete
-- History ayarları
+- History settings
