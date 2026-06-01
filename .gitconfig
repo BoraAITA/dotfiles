@@ -1,0 +1,78 @@
+# Git Config
+# BoraAITA - Personal Configuration
+
+[user]
+    name = Bora AITA
+    email = ezekielbora12@gmail.com
+
+[core]
+    editor = code --wait
+    autocrlf = input
+    pager = less -FRX
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = green bold
+    local = green
+    remote = yellow
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+
+[rerere]
+    enabled = true
+
+[alias]
+    s = status
+    c = commit
+    p = push
+    pl = pull
+    l = log --oneline --graph --decorate
+    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    d = diff
+    ds = diff --staged
+    a = add
+    aa = add -A
+    b = branch
+    co = checkout
+    cb = checkout -b
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    stash = stash
+    unstash = stash pop
+    amend = commit --amend --no-edit
+    undo = reset --soft HEAD~1
+    cleanup = !git cleanup-merged
+
+[init]
+    defaultBranch = main
+
+[help]
+    autocorrect = prompt
